@@ -7,6 +7,10 @@
 
 ```linux
 composer install
+
+# 如果网络错误下载不了 推荐使用阿里云的Composer源
+https://developer.aliyun.com/composer
+执行 composer config repo.packagist composer https://mirrors.aliyun.com/composer/
 ```
 
 ### 项目说明
