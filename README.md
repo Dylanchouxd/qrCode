@@ -1,6 +1,7 @@
 ## 项目依赖
 
-使用了 [Endroid QR Code](https://github.com/endroid/qr-code) 的库实现本地合成二维码和解析二维码
+使用了 [Endroid QR Code](https://github.com/endroid/qr-code) 的库实现本地合成二维码和解析二维码  
+
 使用了 [khanamiryan php-qrcode-detector-decoder](https://github.com/khanamiryan/php-qrcode-detector-decoder) 的库实现本地解析二维码
 
 ## 安装
