@@ -2,12 +2,11 @@
 header('Access-Control-Allow-Origin:*');
 header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
 header('content-type: text/html; charset=utf-8');
-define('folderUrl', $_SERVER["DOCUMENT_ROOT"] . '/upload/image/'); // 上传图片保存位置
-define('resourceUrl', $_SERVER["DOCUMENT_ROOT"] . '/resource/'); // 资源文件位置
-define('qrCodeLibUrl', $_SERVER["DOCUMENT_ROOT"] . '/qrCodeLib/'); // 用户二维码保存位置
-define('toolDir', 'http://' . $_SERVER['HTTP_HOST'] . '/qrCodeLib/'); // 外网访问用户二维码路径
-
-require $_SERVER["DOCUMENT_ROOT"] . '/vendor/autoload.php';
+define('folderUrl', dirname(__DIR__) . '/upload/image/'); // 上传图片保存位置
+define('resourceUrl', dirname(__DIR__) . '/resource/'); // 资源文件位置
+define('qrCodeLibUrl', dirname(__DIR__) . '/qrCodeLib/'); // 用户二维码保存位置
+define('toolDir', './qrCodeLib/'); // 外网访问用户二维码路径
+require dirname(__DIR__) . '/vendor/autoload.php';
 
 // endroid/qr-code
 use Endroid\QrCode\ErrorCorrectionLevel;
@@ -64,7 +63,7 @@ function scaleImg($image, $maxWidth = 400, $maxHeight = 400, $type)
     );
 
     imagepng($newImage, $GLOBALS['imgFiles']['name']);
-    $GLOBALS['imgFiles']['tmp_name'] = $_SERVER["DOCUMENT_ROOT"] . '/qrcode/' . $GLOBALS['imgFiles']['name'];
+    $GLOBALS['imgFiles']['tmp_name'] = dirname(__DIR__) . '/qrcode/' . $GLOBALS['imgFiles']['name'];
     imagedestroy($image);
     imagedestroy($newImage);
 }

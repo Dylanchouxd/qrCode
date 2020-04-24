@@ -1,9 +1,7 @@
 ﻿<?php
 header('Access-Control-Allow-Origin:*');
 header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
-
-require $_SERVER["DOCUMENT_ROOT"] . '/vendor/autoload.php';
-
+require dirname(__DIR__) . '/vendor/autoload.php';
 // endroid/qr-code
 use Endroid\QrCode\Response\QrCodeResponse;
 
@@ -56,14 +54,14 @@ imagecopyresampled(
 );
 
 $imgTmpName = time() . '.png';
-if (!file_exists($_SERVER['DOCUMENT_ROOT'] . '/upload/image/')) {
-    mkdir($_SERVER['DOCUMENT_ROOT'] . '/upload/image/', 0777, true);
+if (!file_exists(dirname(__DIR__) . '/upload/image/')) {
+    mkdir(dirname(__DIR__) . '/upload/image/', 0777, true);
 }
 
-imagepng($newImage, $_SERVER['DOCUMENT_ROOT'] . '/upload/image/' . $imgTmpName); // 保存图片
+imagepng($newImage, dirname(__DIR__) . '/upload/image/' . $imgTmpName); // 保存图片
 imagedestroy($imgTmp);
 imagedestroy($newImage);
 
-$qrCode = new Zxing\QrReader($_SERVER['DOCUMENT_ROOT'] . '/upload/image/' . $imgTmpName);
+$qrCode = new Zxing\QrReader(dirname(__DIR__) . '/upload/image/' . $imgTmpName);
 $text = $qrCode->text();
 exit(jsonResult('200', $text));
