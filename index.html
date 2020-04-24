@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>二维码在线处理工具 —— For Dylan Chou</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./resource/css/style.css">
+    <!-- Bootstrap - 3.3.7 -->
+    <link rel="stylesheet" href="./resource/public/bootstrap-3.3.7/css/bootstrap.min.css">
+    <!-- IconFont -->
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_601475_xie63ark03mzpvi.css">
+    <!-- jQuery-Toast - 消息提醒框 -->
+    <link rel="stylesheet" href="./resource/public/jquery-toast/jquery.toast.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-8 col-md-offset-2">
+                <div class="toolContainer">
+                    <h3 class="tool_title">二维码在线处理工具 ——
+                        <a href="https://blog.dylanchou.cn">For Dylan Chou</a>
+                    </h3>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#payQrCode" data-toggle="tab">付款码三合一
+                                <span class="badge">新</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#parseQrcode" data-toggle="tab">二维码解析
+                                <span class="badge">新</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="payQrCode">
+                            <h5>请上传您的收款二维码~</h5>
+                            <form enctype="multipart/form-data" id="payQrcodeForm" name="payQrcodeForm" method="POST">
+                                <div class="btn-group form-group col-xs-12">
+                                    <div class="row">
+                                        <label for="aliPay" class="btn btn-info col-xs-4" data-toggle="tooltip" data-placement="bottom" title="请上传您的二维码">
+                                            <i class="iconfont icon-zhifubao"></i>支付宝</label>
+                                        <input type="file" class="file" name="aliPay" id="aliPay">
+                                        <label for="weChat" class="btn btn-success col-xs-4" data-toggle="tooltip" data-placement="bottom" title="请上传您的二维码">
+                                            <i class="iconfont icon-weixinzhifu"></i>微信</label>
+                                        <input type="file" class="file" name="weChat" id="weChat">
+                                        <label for="tencent" class="btn btn-info col-xs-4" data-toggle="tooltip" data-placement="bottom" title="请上传您的二维码">
+                                            <i class="iconfont icon-qq"></i>QQ</label>
+                                        <input type="file" class="file" name="tencent" id="tencent">
+                                    </div>
+                                </div>
+                                <button type="button" data-loading-text="合并中..." class="btn btn-success" name="upload" id="merge">合并</button>
+                            </form>
+                            <div class="modal fade" tabindex="-1" id="qrCodeModal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button class="close" data-dismiss="modal"><span>&times;</span></button>
+                                            <h4 class="modal-title">sdas</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3>请保存您的付款二维码~</h3>
+                                            <img id="qrcodeUrl" alt="付款二维码合并图">
+                                            <br />
+                                            <a href="" download="qrcode" id="qrcodeDownload" class="btn btn-primary">点我下载图片</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="parseQrcode">
+                            <form enctype="multipart/form-data" id="parseQrcodeForm" name="parseQrcodeForm" method="POST">
+                                <label for="parseImg" class="btn btn-block btn-info">点我上传图片</label>
+                                <input type="file" name="parseImg" id="parseImg">
+                            </form>
+                            <textarea name="qrcodeText" rows="4" id="qrcodeText" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- jQuery - 3.1.1 -->
+<script src='./resource/public/jquery-3.1.1/jquery-3.1.1.min.js'></script>
+<!-- Bootstrap - 3.3.7 -->
+<script src="./resource/public/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<!-- jQuery-Toast - 消息提醒框 -->
+<script src="./resource/public/jquery-toast/jquery.toast.min.js"></script>
+<script src="./resource/js/main.js"></script>

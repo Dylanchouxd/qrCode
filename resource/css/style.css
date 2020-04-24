@@ -1,0 +1,68 @@
+body {
+    background: url(https://www.misechow.com/wp-content/uploads/2018/03/WorldWaterDay_ZH-CN11747740536_1920x1080.jpg) no-repeat center center;
+    background-attachment: fixed;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: cover;
+    height: 100vh;
+}
+
+.toolContainer {
+    padding: 20px;
+    padding-top: 10px;
+    border-radius: 5px;
+    margin-top: 15%;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.toolContainer .nav-tabs {
+    border-bottom: 1px solid #cecece;
+    margin-bottom: 10px;
+}
+
+.toolContainer .nav-tabs li .badge {
+    background: #f00;
+    margin: -20px 0 0 5px;
+}
+
+.toolContainer .nav.nav-tabs li a {
+    border: none;
+    margin-right: 0;
+    color: #5a5a5a;
+    transition: all 0.3s ease-in-out;
+}
+
+.toolContainer .nav.nav-tabs li.active a,
+.toolContainer .nav.nav-tabs li a:hover {
+    background: none;
+    border: none;
+    -webkit-box-shadow: inset 0 -2px 0 #2196f3;
+    box-shadow: inset 0 -2px 0 #2196f3;
+    margin-right: 0;
+    color: #2196f3;
+}
+
+.toolContainer .file {
+    display: none;
+}
+
+.toolContainer #qrCodeForm i {
+    margin-right: 5px;
+}
+
+/* 二维码模态框 */
+#qrCodeModal .modal-content .modal-body{
+    text-align: center;
+}
+
+
+/* ==========  二维码解析========== */
+
+#qrcodeText {
+    margin-top: 1rem;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+#parseImg {
+    display: none;
+}

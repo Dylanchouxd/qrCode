@@ -1,0 +1,16 @@
+{
+    "name": "dylanchou/pay-qrcode-merge",
+    "description": "Merge Wechat, aliPay, tencent Payment Qrcode..",
+    "authors": [
+        {
+            "name": "Dylan Chou",
+            "email": "dylanchouxd@qq.com",
+            "homepage": "https://blog.dylanchouxd.com/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "khanamiryan/qrcode-detector-decoder": "^1.0",
+        "endroid/qr-code": "^2.5"
+    }
+}
