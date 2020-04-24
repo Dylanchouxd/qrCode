@@ -5,7 +5,7 @@ header('content-type: text/html; charset=utf-8');
 define('folderUrl', dirname(__DIR__) . '/upload/image/'); // 上传图片保存位置
 define('resourceUrl', dirname(__DIR__) . '/resource/'); // 资源文件位置
 define('qrCodeLibUrl', dirname(__DIR__) . '/qrCodeLib/'); // 用户二维码保存位置
-define('toolDir', './qrCodeLib/'); // 外网访问用户二维码路径
+define('toolDir', '//' . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['PHP_SELF'])) . '/qrCodeLib/'); // 外网访问用户二维码路径
 require dirname(__DIR__) . '/vendor/autoload.php';
 
 // endroid/qr-code
